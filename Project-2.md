@@ -45,7 +45,7 @@ pairs.panels(stars_numeric,
              smooth = FALSE, density = FALSE, ellipses = FALSE)
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617604-653e6080-b132-11eb-8c46-8efd6577dbd4.png)
 
 ``` r
 stars_summary <- stars %>%
@@ -635,7 +635,7 @@ hist(Fs, prob = T, main = "Distribution of Sampled F values")
 abline(v = obs_F, col="red",add=T)
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617649-77b89a00-b132-11eb-88e1-a7e57eb904e3.png)
 
 ``` r
 mean(Fs > obs_F)
@@ -731,20 +731,19 @@ ggplot(stars, aes(x = Absolute.magnitude, y = Temperature)) +
        col = "Star Type")
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617685-82732f00-b132-11eb-9aa3-ee6068738a9a.png)
 
 ``` r
 plot(fit_1, which = 1) # Residuals
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-6-2.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617693-869f4c80-b132-11eb-9bae-641da78a6b51.png)
 
 ``` r
 plot(fit_1, which = 2) # QQ Plot
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-6-3.png" style="display: block; margin: auto;" />
-
+![image](https://user-images.githubusercontent.com/83439507/117617706-8a32d380-b132-11eb-82fe-619e2b84324c.png)
 ``` r
 # Robust Standard Errors
 if (!require(sandwich)) install.packages("sandwich")
@@ -902,7 +901,7 @@ ggplot(stars, aes(Luminosity, hypergiant)) +
   ylab("Pr(Hypergiant)")
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617726-91f27800-b132-11eb-837f-e7202c75b8f3.png)
 
 ``` r
 # Save the predicted log-odds in the dataset
@@ -915,7 +914,7 @@ ggplot(stars, aes(logit, fill = as.factor(hypergiant))) +
   labs(fill = "Hypergiant")
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-7-2.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617739-97e85900-b132-11eb-8a46-459eac4fe439.png)
 
 ``` r
 #Accuracy = 83.75%
@@ -953,7 +952,7 @@ ROCplot1 <- ggplot(stars) +
 ROCplot1
 ```
 
-<img src="Project-2_files/figure-gfm/unnamed-chunk-7-3.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117617750-9cad0d00-b132-11eb-8730-44551b4c9acf.png)
 
 ``` r
 # AUC
