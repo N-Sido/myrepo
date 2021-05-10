@@ -254,8 +254,7 @@ ggplot(data = homeless_plot1, aes(x = Fiscal.Year, y = Total_Rate, color = Speci
   scale_color_brewer(palette = "RdYlBu") +
   theme_bw()
 ```
-
-<img src="Project1_files/figure-gfm/unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117652331-aa758900-b158-11eb-90f0-1b9f1939997a.png)
 
 #### This plot shows the total rate at which specific demographics return to homelessness from 2017 to 2019. The particular metrics tracked are Total Rate and Fiscal Year, with a break down across race and age category. Looking at the peaks within the graph, it can be seen that 2018 shows a peak for 7 of the 9 demographics in terms of returning to homelessness, with Asian and Native Islander people actually seeing the only time across the three years when they had anyone return to homelessness. Besides the peak, however, 7 of the 9 demographics also had a lower rate of return in 2019 than in 2017, which may be indicative of a long term decline in return to homelessness.
 
@@ -286,7 +285,7 @@ cor(homeless_numeric, use = "pairwise.complete.obs") %>%
   theme(axis.text.x = element_text(angle = 45,hjust = 1,vjust = 1))
 ```
 
-<img src="Project1_files/figure-gfm/unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117652365-b6614b00-b158-11eb-817c-30cb7e1ceb7a.png)
 
 #### A heat map was created based on the correlation matrix derived from the numeric variables of the dataset. An interesting feature that is immediately noticable is that very few of the variables have a negative correlation with each other, as almost the entire heat map is between the red to white hues. The only instances where a negative correlation does occur are regarding the Fiscal Year variable, though a lot of these are near-zero correlation values. However, this does imply that either many of the variables are not well correlated with the year, or that there is indeed a very slight negative correlation between homelessness in Austin and the year. Variables that tended to be highly correlated with others are ones such as Total Rate, Total Exited, Total Returned, or Total Undupliated Clients. The high correlation is probably due to a ‘Total’ variable being immediately linked to all other variables that comprise the ‘Total’ that is measured.
 
@@ -310,7 +309,7 @@ ggplot(data = homeless_plot2,
   theme_bw()
 ```
 
-<img src="Project1_files/figure-gfm/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117652382-bcefc280-b158-11eb-9d9a-75607284bf1b.png)
 
 #### This plot shows the amount of homeless clients tallied by the city, per age category, colored by the groups average rate of return to homelessness from 2017-2019. A key feature of the graph is that Adults aged 25-61 show a massive peak in the graph, at almost 10000 clients. This however, is slightly misleading, since that group covers 36 years of age which is far greater than any other age category, and is thus expected to have a greater amount of people belonging to it. An unfortunate feature regarding the age categories is that Children are the second largest group in the graph, outnumbering the elderly and matching Adults aged 18-24. Children, however, have the lowest rate of return to homelessness, by a substantial margin, compared to the other age categories. Meanwhile, the elderly have the highest rate of return to homelessness, followed by Adults aged 25-61. This graph shows that more can be done to prevent children from entering homelessness, and more assistance should be given to the elderly to help keep them out of homelessness once they exit.
 
@@ -380,7 +379,7 @@ fviz_screeplot(homeless_pca) +
   geom_text(aes(label = round(percent_data, 2)), size = 0, vjust = -0.5)
 ```
 
-<img src="Project1_files/figure-gfm/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117652410-c37e3a00-b158-11eb-8761-6d1f57cbae49.png)
 
 #### In determining how many PCs to keep for analysis, it was decided that 5 PCs should be kept. Eigenvalues are greater than 1 for the first 5 PCs (Kaiser’s Rule), and it takes at least 4 PCs for the cumulative variance explained by the model to be above 80%. Furthermore, analyzing the scree plot, variance starts to level off after about 3 PCs, and even more at about 5 PCs. However, a 5 dimensional PC plot is not possible to make, so only a plot of PC1 against PC2 will be shown below. These two PCs still explain 66.09% of the variance in the model.
 
@@ -397,6 +396,6 @@ ggplot(pca_data, aes(x = PC1, y = PC2, color = DC)) + #DC showed better potentia
   theme_bw()
 ```
 
-<img src="Project1_files/figure-gfm/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+![image](https://user-images.githubusercontent.com/83439507/117652422-c7aa5780-b158-11eb-8cd2-cc432d55a68f.png)
 
 #### The PCA plot compares PC1 and PC2 and is colored by demographic category. The percent of variance explained by PC1 is 51.834%, so it has the greatest predictive value compared the the other principal components. Looking at the plot, it can be seen that there is some clustering consistent with the demographic categories. Race, marked in blue, has two clusters on PC1 one at around -4.25, and another from 0.25-3.75. Age Category also clusters together around -2.5 on PC1. In general, however, the scattering is fairly homogenous without much distinct clustering, implying that either PC1 and PC2 are not enough to show classifications of people, or that the variables involved in the dataset do not predict a specific “type” of person may experience homelessness.
